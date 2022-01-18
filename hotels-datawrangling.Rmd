@@ -109,8 +109,9 @@ Your label should be short, informative, and shouldn't include spaces. It also
 shouldn't repeat a previous label, otherwise R Markdown will give you an 
 error about repeated R chunk labels.
 
-```{r label-me-1}
-# add code here
+```{r freq-table-adults}
+ggplot(hotels, aes(x=adults, y = frequency(adults, hotel))) +
+  geom_bar(stat = "identity", color = "black", fill = "gray")
 # pay attention to correctness and code style
 ```
 
