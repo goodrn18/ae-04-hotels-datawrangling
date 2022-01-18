@@ -110,9 +110,10 @@ shouldn't repeat a previous label, otherwise R Markdown will give you an
 error about repeated R chunk labels.
 
 ```{r freq-table-adults}
-ggplot(hotels, aes(x=adults, y = frequency(adults, hotel))) +
-  geom_bar(stat = "identity", color = "black", fill = "gray")
-# pay attention to correctness and code style
+hotels %>% 
+  count(adults) %>% 
+  arrange(desc(n)
+)
 ```
 
 ### Exercise 6.
@@ -123,8 +124,11 @@ reveal about the surprising results you spotted in the previous exercise?
 
 **Note:** Don't forget to label your R chunk as well (where it says `label-me-2`). 
 
-```{r label-me-2}
-# add code here
+```{r freq_table_cancel}
+hotels %>% 
+  count(is_canceled) %>%
+  arrange(desc(n)
+)
 # pay attention to correctness and code style
 ```
 
